@@ -257,7 +257,7 @@ export default function QuizPage() {
   if (!q) return null;
 
   return (
-    <div className="page-scroll" style={{ padding: '16px 16px 0', display: 'flex', flexDirection: 'column' }}>
+    <div className="page-scroll" style={{ padding: '16px 16px 0' }}>
       {/* 진행바 */}
       <div style={{ marginBottom: 16 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
@@ -290,7 +290,7 @@ export default function QuizPage() {
       </div>
 
       {/* 선택지 */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 8, flexShrink: 0 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
         {q.opts.map((opt, i) => {
           let bg = '#fff', border = 'var(--border)', color = 'var(--ink)';
           if (answered) {
@@ -328,8 +328,7 @@ export default function QuizPage() {
         <div className="fade-up" style={{
           padding: '12px 14px',
           background: selectedAns === q.ans ? '#edf7f1' : '#fef0ee',
-          borderRadius: 8, marginTop: 10, flexShrink: 0,
-        }}>
+          borderRadius: 8, marginTop: 10, }}>
           <div style={{ fontWeight: 700, fontSize: 13, marginBottom: 4, color: selectedAns === q.ans ? 'var(--green)' : 'var(--accent)' }}>
             {selectedAns === q.ans ? '✅ 정답!' : '❌ 오답'}
           </div>
