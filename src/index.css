@@ -16,6 +16,7 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 html, body { height: 100%; overflow: hidden; background: var(--paper); }
+* { -webkit-tap-highlight-color: transparent; }
 
 #root {
   height: 100%;
@@ -24,7 +25,7 @@ html, body { height: 100%; overflow: hidden; background: var(--paper); }
   max-width: 480px;
   margin: 0 auto;
   position: relative;
-  overflow: hidden;
+  overflow-y: auto;
   background: var(--paper);
 }
 
@@ -37,12 +38,11 @@ body {
 }
 
 .page-scroll {
-  min-height: 0;
   flex: 1;
   overflow-y: auto;
   overflow-x: hidden;
-  padding-bottom: calc(var(--bottom-nav-height) + var(--safe-bottom) + 16px);
   -webkit-overflow-scrolling: touch;
+  padding-bottom: calc(var(--bottom-nav-height) + var(--safe-bottom) + 16px);
 }
 .page-scroll::-webkit-scrollbar { display: none; }
 
