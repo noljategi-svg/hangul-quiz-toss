@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 import { useApp } from '../store/AppContext';
 import { SPELLING, IDIOM, PROVERB } from '../data/questions';
 import type { Question } from '../types';
@@ -24,6 +24,8 @@ export default function QuizPage() {
   const [showReport, setShowReport] = useState(false);
   const [reportType, setReportType] = useState('');
   const [toast, setToast] = useState('');
+
+  const bottomRef = useRef<HTMLDivElement>(null);
 
   const pool = mode === 'spelling' ? SPELLING : mode === 'idiom' ? IDIOM : PROVERB;
   const modeLabel = mode === 'spelling' ? '맞춤법' : mode === 'idiom' ? '사자성어' : '속담';
@@ -53,6 +55,12 @@ export default function QuizPage() {
     if (ok) setScore(s => s + 1);
     setAnswers(prev => [...prev, ok]);
   };
+
+  useEffect(() => {
+    if (answered && bottomRef.current) {
+      bottomRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    }
+  }, [answered]);
 
   const handleNext = () => {
     if (qi + 1 >= N) {
@@ -249,7 +257,7 @@ export default function QuizPage() {
   if (!q) return null;
 
   return (
-    <div className="page-scroll" style={{ padding: '16px 16px 0' }}>
+    <div className="page-scroll" style={{ padding: '16px 16px 0', display: 'flex', flexDirection: 'column' }}>
       {/* 진행바 */}
       <div style={{ marginBottom: 16 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
@@ -282,7 +290,7 @@ export default function QuizPage() {
       </div>
 
       {/* 선택지 */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 8, flexShrink: 0 }}>
         {q.opts.map((opt, i) => {
           let bg = '#fff', border = 'var(--border)', color = 'var(--ink)';
           if (answered) {
@@ -384,6 +392,7 @@ export default function QuizPage() {
         </div>
       )}
 
+      <div ref={bottomRef} />
       {toast && <div className="toast">{toast}</div>}
     </div>
   );
