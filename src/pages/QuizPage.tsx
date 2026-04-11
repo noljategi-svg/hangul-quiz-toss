@@ -249,7 +249,7 @@ export default function QuizPage() {
   if (!q) return null;
 
   return (
-    <div style={{ flex: 1, display: 'flex', flexDirection: 'column', padding: '16px 16px 0', overflow: 'hidden' }}>
+    <div style={{ flex: 1, display: 'flex', flexDirection: 'column', padding: '16px 16px 0', overflowY: 'auto' }}>
       {/* 진행바 */}
       <div style={{ marginBottom: 16 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
@@ -282,7 +282,7 @@ export default function QuizPage() {
       </div>
 
       {/* 선택지 */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 8, flex: 1, overflowY: 'auto' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
         {q.opts.map((opt, i) => {
           let bg = '#fff', border = 'var(--border)', color = 'var(--ink)';
           if (answered) {
