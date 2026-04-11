@@ -54,6 +54,10 @@ export default function QuizPage() {
     const ok = idx === q.ans;
     if (ok) setScore(s => s + 1);
     setAnswers(prev => [...prev, ok]);
+    setTimeout(() => {
+      const btn = document.getElementById('next-btn');
+      if (btn) btn.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 100);
   };
 
   useEffect(() => {
@@ -344,7 +348,7 @@ export default function QuizPage() {
       )}
 
       {answered && (
-        <button className="btn-primary fade-up" onClick={handleNext} style={{ marginTop: 10, marginBottom: 8, flexShrink: 0 }}>
+        <button id="next-btn" className="btn-primary fade-up" onClick={handleNext} style={{ marginTop: 10, marginBottom: 8, flexShrink: 0 }}>
           {qi < N - 1 ? '다음 문제 →' : '결과 보기 🎉'}
         </button>
       )}
