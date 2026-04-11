@@ -37,6 +37,7 @@ body {
 }
 
 .page-scroll {
+  min-height: 0;
   flex: 1;
   overflow-y: auto;
   overflow-x: hidden;
