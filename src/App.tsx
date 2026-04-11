@@ -30,7 +30,7 @@ function AppContent() {
           </div>
         </div>
       )}
-      <div style={{ flex: 1, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+      <div style={{ flex: 1, minHeight: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
         {currentPage === 'home'    && <HomePage />}
         {currentPage === 'quiz'    && <QuizPage />}
         {currentPage === 'rank'    && <RankPage />}
