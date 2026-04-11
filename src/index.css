@@ -39,6 +39,7 @@ body {
 
 .page-scroll {
   flex: 1;
+  height: 0;
   overflow-y: auto;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
