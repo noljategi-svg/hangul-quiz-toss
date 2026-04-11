@@ -32,7 +32,7 @@ export default function HomePage() {
         padding: '24px 20px 28px',
         color: 'var(--paper)',
         position: 'relative',
-        overflow: 'hidden',
+        overflowY: 'auto',
       }}>
         <div style={{ position: 'absolute', top: 0, right: 0, width: 160, height: 160,
           background: 'rgba(255,255,255,0.04)', borderRadius: '0 0 0 100%' }} />
