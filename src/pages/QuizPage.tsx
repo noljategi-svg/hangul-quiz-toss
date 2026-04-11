@@ -249,7 +249,7 @@ export default function QuizPage() {
   if (!q) return null;
 
   return (
-    <div style={{ flex: 1, display: 'flex', flexDirection: 'column', padding: '16px 16px 0', overflowY: 'auto' }}>
+    <div className="page-scroll" style={{ padding: '16px 16px 0' }}>
       {/* 진행바 */}
       <div style={{ marginBottom: 16 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
