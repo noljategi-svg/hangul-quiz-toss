@@ -47,7 +47,7 @@ export default function MissionPage() {
   const doneCnt = missions.filter(m => m.done).length;
 
   return (
-    <div className="page-scroll" style={{ padding: '20px 16px 0' }}>
+    <div className="page-scroll">
       {/* 일일 미션 */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
         <div className="section-title" style={{ marginBottom: 0 }}>📅 일일 미션</div>
