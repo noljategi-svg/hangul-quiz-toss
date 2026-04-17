@@ -91,7 +91,7 @@ export default function RankPage() {
   };
 
   return (
-    <div className="page-scroll" style={{ padding: '20px 16px 0' }}>
+    <div className="page-scroll">
       {/* 내 순위 카드 */}
       <div className="card" style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 20 }}>
         <div style={{
