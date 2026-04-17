@@ -25,7 +25,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="page-scroll" style={{ padding: '0 0 16px' }}>
+    <div className="page-scroll">
       {/* 헤더 */}
       <div style={{
         background: 'linear-gradient(135deg, var(--ink) 0%, #3d2510 100%)',
