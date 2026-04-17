@@ -147,7 +147,7 @@ export default function QuizPage() {
     const curLv = getLevel(xp);
 
     return (
-      <div className="page-scroll fade-up" style={{ padding: '20px 16px 0' }}>
+      <div className="page-scroll">
         <div style={{ display: 'flex', gap: 8, marginBottom: 20, overflowX: 'auto', paddingBottom: 4 }}>
           {(['spelling', 'idiom', 'proverb'] as const).map(m => (
             <button key={m}
