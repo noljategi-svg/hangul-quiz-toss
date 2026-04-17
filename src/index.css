@@ -44,8 +44,7 @@ body {
   overflow-x: hidden;
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
-  /* ✅ 여유 있게 늘림: 60 + safe + 40 */
-  padding-bottom: calc(var(--bottom-nav-height) + var(--safe-bottom) + 40px);
+  padding-bottom: 140px;  /* ✅ 넉넉하게 */
 }
 .page-scroll::-webkit-scrollbar { display: none; }
 
