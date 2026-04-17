@@ -222,7 +222,7 @@ export default function QuizPage() {
     const emoji = finalScore === N ? '🏆' : finalScore >= 8 ? '🌟' : finalScore >= 6 ? '👍' : '📚';
 
     return (
-      <div className="page-scroll fade-up" style={{ padding: '20px 16px 0' }}>
+      <div className="page-scroll fade-up" style={{ paddingTop: 20, paddingLeft: 16, paddingRight: 16 }}>
         <div className="card" style={{ textAlign: 'center', padding: '32px 20px', marginBottom: 16 }}>
           <div style={{ fontSize: 52, marginBottom: 12 }}>{emoji}</div>
           <div style={{ fontSize: 28, fontWeight: 900, marginBottom: 4 }}>{finalScore} / {N}</div>
@@ -261,7 +261,7 @@ export default function QuizPage() {
   if (!q) return null;
 
   return (
-    <div className="page-scroll" style={{ padding: '16px 16px 0' }}>
+    <div className="page-scroll" style={{ paddingTop: 16, paddingLeft: 16, paddingRight: 16 }}>
       {/* 진행바 */}
       <div style={{ marginBottom: 16 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
