@@ -38,12 +38,14 @@ body {
 }
 
 .page-scroll {
-  flex: 1;
-  height: 0;
+  flex: 1 1 auto;
+  min-height: 0;
   overflow-y: auto;
   overflow-x: hidden;
+  overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
-  padding-bottom: calc(var(--bottom-nav-height) + var(--safe-bottom) + 16px);
+  /* ✅ 여유 있게 늘림: 60 + safe + 40 */
+  padding-bottom: calc(var(--bottom-nav-height) + var(--safe-bottom) + 40px);
 }
 .page-scroll::-webkit-scrollbar { display: none; }
 
